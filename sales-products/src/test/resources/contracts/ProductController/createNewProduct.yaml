@@ -1,0 +1,40 @@
+---
+name: "Create a new product"
+
+request:
+  method: "POST"
+  url: "/v1/product"
+  headers:
+    Content-Type: "application/json"
+  matchers:
+    headers:
+      - key: "Content-Type"
+        regex: "application/json.*"
+        regexType: "as_string"
+  body:
+    productId: "1"
+    name: "Product One"
+    unitPrice: "2.35"
+    unitOfMeasure: "KILO"
+    qtdTotal: "10"
+    qtdAvailable: "5"
+    qtdReserved: "3"
+    qtdSold: "2"
+response:
+  status: 200
+  body:
+    productId: "1"
+    name: "Product One"
+    unitPrice: "2.35"
+    unitOfMeasure: "KILO"
+    qtdTotal: "10"
+    qtdAvailable: "5"
+    qtdReserved: "3"
+    qtdSold: "2"
+  headers:
+    Content-Type: "application/json"
+  matchers:
+    headers:
+      - key: "Content-Type"
+        regex: "application/json.*"
+        regexType: "as_string"

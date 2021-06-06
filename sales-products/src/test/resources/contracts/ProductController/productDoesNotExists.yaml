@@ -1,0 +1,25 @@
+---
+name: "Get one product that does not exists"
+
+request:
+  method: "GET"
+  url: "/v1/product/3"
+response:
+  status: 404
+  body:
+    path: "/v1/product/3"
+    error: Not Found
+    message: Product id [3] not found.
+    timestamp: '2021-06-06T21:28:40.191182Z'
+    status: 404
+  headers:
+    Content-Type: "application/json"
+  matchers:
+    headers:
+      - key: "Content-Type"
+        regex: "application/json.*"
+        regexType: "as_string"
+    body:
+      - path: $.timestamp
+        type: "by_regex"
+        value: ".*"

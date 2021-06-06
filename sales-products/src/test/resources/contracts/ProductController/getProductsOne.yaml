@@ -1,0 +1,24 @@
+---
+name: "Get all product id 1"
+
+request:
+  method: "GET"
+  url: "/v1/product/1"
+response:
+  status: 200
+  headers:
+    Content-Type: "application/json"
+  body:
+    productId: "1"
+    name: "Product One"
+    unitPrice: "2.35"
+    unitOfMeasure: "KILO"
+    qtdTotal: "10"
+    qtdAvailable: "5"
+    qtdReserved: "3"
+    qtdSold: "2"
+  matchers:
+    headers:
+      - key: "Content-Type"
+        regex: "application/json.*"
+        regexType: "as_string"

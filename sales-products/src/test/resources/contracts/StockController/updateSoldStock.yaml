@@ -1,0 +1,34 @@
+---
+name: "Update the sold stock quantity"
+
+request:
+  method: "PUT"
+  url: "/v1/stock/update-sold"
+  headers:
+    Content-Type: "application/json"
+  matchers:
+    headers:
+      - key: "Content-Type"
+        regex: "application/json.*"
+        regexType: "as_string"
+  body:
+    productId: "2"
+    qtdSold: "3"
+response:
+  status: 200
+  headers:
+    Content-Type: "application/json"
+  body:
+    productId: "2"
+    name: "Product Two"
+    unitPrice: "4.78"
+    unitOfMeasure: "METERS"
+    qtdTotal: "20.5"
+    qtdAvailable: "14"
+    qtdReserved: "2.5"
+    qtdSold: "4"
+  matchers:
+    headers:
+      - key: "Content-Type"
+        regex: "application/json.*"
+        regexType: "as_string"
