@@ -2,7 +2,7 @@
 name: "Add product to the stock"
 
 request:
-  method: "PUT"
+  method: "POST"
   url: "/v1/stock/add"
   headers:
     Content-Type: "application/json"

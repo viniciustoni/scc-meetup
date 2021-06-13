@@ -11,6 +11,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.cloud.contract.verifier.messaging.boot.AutoConfigureMessageVerifier;
+import org.springframework.test.annotation.DirtiesContext;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -20,7 +22,9 @@ import static com.vagai.salesproducts.entity.enumerated.UnitOfMeasure.METERS;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 
-@SpringBootTest(classes = StockController.class)
+@DirtiesContext
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.MOCK)
+@AutoConfigureMessageVerifier
 public class StockControllerBase {
 
     private static final Long PRODUCT_ID_ONE = 1L;

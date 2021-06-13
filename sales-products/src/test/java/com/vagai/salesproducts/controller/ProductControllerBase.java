@@ -19,6 +19,7 @@ import static com.vagai.salesproducts.entity.enumerated.UnitOfMeasure.METERS;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 
+// A little bit simpler the conf
 @SpringBootTest(classes = ProductController.class)
 public class ProductControllerBase {
 

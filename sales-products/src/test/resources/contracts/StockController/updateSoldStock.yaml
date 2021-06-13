@@ -2,7 +2,7 @@
 name: "Update the sold stock quantity"
 
 request:
-  method: "PUT"
+  method: "POST"
   url: "/v1/stock/update-sold"
   headers:
     Content-Type: "application/json"

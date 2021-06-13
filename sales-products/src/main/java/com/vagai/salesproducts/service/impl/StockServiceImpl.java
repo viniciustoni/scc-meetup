@@ -9,22 +9,18 @@ import com.vagai.salesproducts.exception.ProductNotFoundException;
 import com.vagai.salesproducts.mapper.ProductMapper;
 import com.vagai.salesproducts.repository.ProductRepository;
 import com.vagai.salesproducts.service.StockService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.math.BigDecimal;
 
 @Service
+@AllArgsConstructor
 public class StockServiceImpl implements StockService {
 
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
-
-    public StockServiceImpl(final ProductRepository productRepository,
-                            final ProductMapper productMapper) {
-        this.productRepository = productRepository;
-        this.productMapper = productMapper;
-    }
 
     @Override
     @Transactional

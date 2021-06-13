@@ -1,0 +1,1 @@
+CREATE SCHEMA if not exists sales_order;

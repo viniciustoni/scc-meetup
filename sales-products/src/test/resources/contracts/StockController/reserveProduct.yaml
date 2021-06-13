@@ -2,7 +2,7 @@
 name: "Reserve a product for order"
 
 request:
-  method: "PUT"
+  method: "POST"
   url: "/v1/stock/reserve"
   headers:
     Content-Type: "application/json"

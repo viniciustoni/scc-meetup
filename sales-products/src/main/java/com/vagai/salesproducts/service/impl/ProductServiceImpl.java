@@ -6,26 +6,20 @@ import com.vagai.salesproducts.exception.ProductNotFoundException;
 import com.vagai.salesproducts.mapper.ProductMapper;
 import com.vagai.salesproducts.repository.ProductRepository;
 import com.vagai.salesproducts.service.ProductService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.toList;
 
 @Service
+@AllArgsConstructor
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
     private final ProductMapper productMapper;
-
-    public ProductServiceImpl(final ProductRepository productRepository,
-                              final ProductMapper productMapper) {
-        this.productRepository = productRepository;
-        this.productMapper = productMapper;
-    }
 
     @Override
     public List<ProductDto> getProducts() {

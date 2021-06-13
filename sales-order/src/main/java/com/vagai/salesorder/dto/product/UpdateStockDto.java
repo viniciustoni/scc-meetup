@@ -1,4 +1,4 @@
-package com.vagai.salesorder.dto;
+package com.vagai.salesorder.dto.product;
 
 import lombok.Data;
 
